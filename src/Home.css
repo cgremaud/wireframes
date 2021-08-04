@@ -1,13 +1,14 @@
 .home{
     
     align-content: left;
-    padding-left: 33%;
-    padding-right: 33%;
+    padding-left: 2%;
+    padding-right: 2%;
     margin: 5%;
 }
 
 .paper {
     padding: 2em;
+    margin-top: 2%;
 }
 /* 
 .card {
