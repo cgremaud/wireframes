@@ -2,13 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {NavBar} from "./NavBar";
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom";
 
 
+
 ReactDOM.render(
   <Router>
+  <div className="container outer-container">
+    <NavBar />
     <App />
+  </div>
   </Router>,
   document.getElementById('root')
 );
