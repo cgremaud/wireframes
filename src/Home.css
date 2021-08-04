@@ -1,7 +1,15 @@
 .home{
-    background-color: grey;
+    
     align-content: left;
     padding-left: 33%;
     padding-right: 33%;
     margin: 5%;
+}
+
+.paper {
+    padding: 2em;
+}
+
+.card {
+    
 }
