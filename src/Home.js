@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css"
+import Paper from '@material-ui/core/Paper';
 
 export function Home() {
 
@@ -11,6 +12,8 @@ export function Home() {
                 <li>two</li>
                 <li>three</li>
             </ul>
+            <Paper className="card">Text</Paper>
+        
           </div>
           
         </div>
