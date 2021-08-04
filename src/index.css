@@ -15,4 +15,5 @@ code {
 .outer-container {
   width: 75%;
   background-color: black;
+  padding: 2%;
 }
