@@ -8,15 +8,29 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
 export function Home() {
+    const [user, setUser] = useState(null);
+    
+
+    useEffect(()=> {
+        
+        fetch(`https://api.github.com/users/cgremaud`)
+        .then(response => response.json())
+        .then(setUser)
+        console.log(JSON.stringify(user))
+    
+    }, [user])
+
+
 
     return(
+
     <Paper className="paper">
         <div className="row home">
           <div className="col-12" align="center"> 
           <CardActionArea>
-            <Card variant="outlined">
+            <Card variant="outlined" className="card">
             <CardContent>
-                <Typography variant="h3" align="left">Header</Typography>
+                <Typography variant="h3" align="left">{user.name}</Typography>
                 <Typography variant="subtitle1" align="left">
                     <ul>
                         <li>List</li>
