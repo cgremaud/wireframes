@@ -10,7 +10,9 @@ export function NavBar() {
     <Paper>    
         <nav className="navBar" align="center">
         <span className="row" align="center">
-            <span className="col-3" align="left"><Button variant="contained" color="primary" className="btn btn-info "><Link to="/">Home</Link></Button> </span>
+            <span className="col-3" align="left">
+                <Button variant="contained" color="primary" className="btn btn-info "><Link to="/">Home</Link></Button> 
+            </span>
             <span className="col-2" align="center">
                 <Button className="btn btn-info" variant="contained" color="primary"><Link to="/my-haves">My Haves</Link> </Button>
             </span>
