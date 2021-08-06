@@ -12,6 +12,8 @@ This app was created using create-react-app. It also utilizes Material Design co
 
 I am currently working on building the NavBar and Home components. 
 
+You can see our plans for the layout of the app [here](https://docs.google.com/drawings/d/10wdWoqieyv-g_UfqlVWKFR4Jl3XWTR9O6qH7-81oGIA/edit?usp=sharing)
+
 # To run
 
 Clone the repo and run `yarn install`. Then run `yarn start` to start the server on localhost:3000 

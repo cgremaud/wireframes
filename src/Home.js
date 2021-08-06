@@ -28,7 +28,7 @@ export function Home() {
           <CardActionArea>
             <Card variant="outlined" className="card">
                 <CardContent>
-                    <Typography variant="h3" align="left">Name</Typography>
+                    <Typography variant="h3" align="left">{user.name}</Typography>
                     <Typography variant="subtitle1" align="left">
                         <ul>
                             <li>List</li>
