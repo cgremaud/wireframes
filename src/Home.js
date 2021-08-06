@@ -11,13 +11,11 @@ export function Home() {
     const [user, setUser] = useState(null);
     
 
-    useEffect(()=> {
-        
+    useEffect(()=> {  
         fetch(`https://api.github.com/users/cgremaud`)
         .then(response => response.json())
         .then(setUser)
         console.log(JSON.stringify(user))
-    
     }, [user])
 
 
@@ -29,20 +27,18 @@ export function Home() {
           <div className="col-12" align="center"> 
           <CardActionArea>
             <Card variant="outlined" className="card">
-            <CardContent>
-                <Typography variant="h3" align="left">{user.name}</Typography>
-                <Typography variant="subtitle1" align="left">
-                    <ul>
-                        <li>List</li>
-                        <li>List</li>
-                    </ul>
-                </Typography>
-            </CardContent>
+                <CardContent>
+                    <Typography variant="h3" align="left">Name</Typography>
+                    <Typography variant="subtitle1" align="left">
+                        <ul>
+                            <li>List</li>
+                            <li>List</li>
+                        </ul>
+                    </Typography>
+                </CardContent>
             </Card>
         </CardActionArea> 
-        
           </div>
-          
         </div>
     </Paper>
     )

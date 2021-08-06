@@ -20,11 +20,11 @@ export function NavBar() {
                 <Button  variant="contained" color="primary" className="btn btn-info"><Link to="/my-needs">My Needs</Link></Button>   
             </span>
             <span className="col-2" align="right">
-                <Button className="btn btn-info" variant="contained" color="primary"><Link to="search">Search</Link> </Button>
+                <Button className="btn btn-info" variant="contained" color="primary"><Link to="/search">Search</Link> </Button>
             </span>
-        
-            <span className="col-3" align="right"><Button variant="contained" color="primary" className="btn btn-info"><Link to="/profile">Profile</Link></Button></span>
-        </span>
+            <span className="col-3" align="right">
+                <Button variant="contained" color="primary" className="btn btn-info"><Link to="/profile">Profile</Link></Button></span>
+            </span>
         </nav>
     </Paper>
     )
