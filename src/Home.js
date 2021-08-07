@@ -8,15 +8,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 
 export function Home() {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState();
     
     //WHY ISN'T THIS AWAITING THE FETCH??? 
     const fetchUser = async () => { 
-
-        let response = await fetch(`https://api.github.com/users/cgremaud`)
-        console.log(JSON.stringify(user))
-        return await response.json()
-        
+        try {
+            let response = await fetch(`https://api.github.com/users/cgremaud`)
+            return await response.json();
+        } catch(err) {
+            console.log(err)
+        }
     }
 
     useEffect(()=> {  
