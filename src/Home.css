@@ -11,6 +11,6 @@
 }
 
 .card {
-    display: 'flex';
+    display: 'static';
     width: 100%;
   }

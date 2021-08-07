@@ -5,13 +5,14 @@ import App from './App';
 import {NavBar} from "./NavBar";
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom";
+import AppBar from "./AppBar";
 
 
 
 ReactDOM.render(
   <Router>
   <div className="container outer-container">
-    <NavBar />
+    <AppBar />
     <App />
   </div>
   </Router>,
