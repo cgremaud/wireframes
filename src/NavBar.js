@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+// import {BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import "./NavBar.css"
 import ReactDOM from 'react-dom';
 import Button from '@material-ui/core/Button';
