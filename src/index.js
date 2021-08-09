@@ -4,13 +4,14 @@ import './index.css';
 import App from './App';
 import {BrowserRouter as Router} from "react-router-dom";
 import AppBar from "./AppBar";
+import NavBar from "./NavBar";
 
 
 
 ReactDOM.render(
   <Router>
   <div className="container outer-container">
-    <AppBar />
+    <NavBar />
     <App />
   </div>
   </Router>,
