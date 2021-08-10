@@ -9,27 +9,39 @@ import Typography from '@material-ui/core/Typography';
 
 export function Home() {
     const [user, setUser] = useState();
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [userIsLoaded, setuserIsLoaded] = useState(false);
     const [error, setError] = useState();
+    const [usersArray, setUsersArray] = useState([]);
+    const [usersArrayIsLoaded, setUsersArrayIsLoaded] = useState(false);
+
+    const fetchUsersArray = async () => {
+        const result = await fetch("https://randomuser.me/api/?results=5");
+        setUsersArray(await result.json());
+        // setUsersArray(usersArray.results)
+        // console.log(usersArray.results)
+        setUsersArrayIsLoaded(true)
+    }
 
     useEffect(()=> {  
         try{
          async function fetchUser() {
              const result = await fetch("https://api.github.com/users/cgremaud");
-             const json = await result.json();
-             setUser(json);
-             setIsLoaded(true);
+             setUser(await result.json());
+             console.log(user);
+             setuserIsLoaded(true);
          }
          fetchUser();
+         fetchUsersArray();
+         setUsersArray(usersArray.results)
+         console.log(usersArray)
         } catch(err) {
             setError(err);
-
         }
-        console.log(user) 
-    })
+         
+    }, [])
 
 
-if(!isLoaded) {
+if(!userIsLoaded || !usersArrayIsLoaded) {
     return <div>Loading . . .</div>
 } else if (error) {
     return <div>Error: {error.message}</div>
@@ -46,8 +58,8 @@ else {
                                 <Typography variant="h3" align="left">{user.name}</Typography>
                                 <Typography variant="subtitle1" align="left">
                                     <ul>
-                                        <li>List</li>
-                                        <li>List</li>
+                                        <li>{user.bio}</li>
+                                        <li>{user.created_at}</li>
                                     </ul>
                                 </Typography>
                             </CardContent>
