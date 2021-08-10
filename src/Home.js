@@ -17,7 +17,6 @@ export function Home() {
     const fetchUsersArray = async () => {
         const result = await fetch("https://randomuser.me/api/?results=5");
         setUsersArray(await result.json());
-        // setUsersArray(usersArray.results)
         console.log(usersArray)
         setUsersArrayIsLoaded(true)
     }
@@ -32,12 +31,10 @@ export function Home() {
          }
          fetchUser();
          fetchUsersArray();
-        //  setUsersArray(usersArray.results)
          console.log(usersArray.results)
         } catch(err) {
             setError(err);
-        }
-         
+        }   
     }, [])
 
 
