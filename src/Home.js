@@ -11,7 +11,7 @@ export function Home() {
     const [user, setUser] = useState();
     const [userIsLoaded, setuserIsLoaded] = useState(false);
     const [error, setError] = useState();
-    const [usersArray, setUsersArray] = useState([]);
+    const [usersArray, setUsersArray] = useState({});
     const [usersArrayIsLoaded, setUsersArrayIsLoaded] = useState(false);
 
     const fetchUsersArray = async () => {
