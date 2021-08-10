@@ -18,7 +18,7 @@ export function Home() {
         const result = await fetch("https://randomuser.me/api/?results=5");
         setUsersArray(await result.json());
         // setUsersArray(usersArray.results)
-        // console.log(usersArray.results)
+        console.log(usersArray)
         setUsersArrayIsLoaded(true)
     }
 
@@ -32,8 +32,8 @@ export function Home() {
          }
          fetchUser();
          fetchUsersArray();
-         setUsersArray(usersArray.results)
-         console.log(usersArray)
+        //  setUsersArray(usersArray.results)
+         console.log(usersArray.results)
         } catch(err) {
             setError(err);
         }
@@ -68,7 +68,7 @@ else {
                     <p><CardActionArea>
                         <Card variant="outlined" className="card">
                             <CardContent>
-                                <Typography variant="h3" align="left">Name</Typography>
+                                <Typography variant="h3" align="left">{usersArray.results[0].name.first}</Typography>
                                 <Typography variant="subtitle1" align="left">
                                     <ul>
                                         <li>List</li>
