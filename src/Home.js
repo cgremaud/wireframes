@@ -62,10 +62,12 @@ else {
                             </CardContent>
                         </Card>
                     </CardActionArea></p>
-                    <p><CardActionArea>
-                        <Card variant="outlined" className="card">
+                    {usersArray.results.map((user, i)=> {
+                        return(
+                            <p><CardActionArea>
+                        <Card variant="outlined" className="card" id={i}>
                             <CardContent>
-                                <Typography variant="h3" align="left">{usersArray.results[0].name.first}</Typography>
+                                <Typography variant="h3" align="left">{user.name.first}</Typography>
                                 <Typography variant="subtitle1" align="left">
                                     <ul>
                                         <li>List</li>
@@ -74,7 +76,10 @@ else {
                                 </Typography>
                             </CardContent>
                         </Card>
-                    </CardActionArea></p> 
+                    </CardActionArea></p>
+                        )
+                    })}
+            
                 </div>
                 <span className="col-1"></span>
             </div>
