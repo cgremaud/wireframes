@@ -15,29 +15,26 @@ export function Home() {
     const [usersArrayIsLoaded, setUsersArrayIsLoaded] = useState(false);
 
     const fetchUsersArray = async () => {
-        const result = await fetch("https://randomuser.me/api/?results=5");
+        const result = await fetch("https://randomuser.me/api/?results=10");
         setUsersArray(await result.json());
-        // setUsersArray(usersArray.results)
-        // console.log(usersArray.results)
+        console.log(usersArray)
         setUsersArrayIsLoaded(true)
+    }
+
+    const fetchUser = async () => {
+        const result = await fetch("https://api.github.com/users/cgremaud");
+        setUser(await result.json());
+        console.log(user);
+        setuserIsLoaded(true);
     }
 
     useEffect(()=> {  
         try{
-         async function fetchUser() {
-             const result = await fetch("https://api.github.com/users/cgremaud");
-             setUser(await result.json());
-             console.log(user);
-             setuserIsLoaded(true);
-         }
          fetchUser();
          fetchUsersArray();
-         setUsersArray(usersArray.results)
-         console.log(usersArray)
         } catch(err) {
             setError(err);
-        }
-         
+        }   
     }, [])
 
 
@@ -65,19 +62,24 @@ else {
                             </CardContent>
                         </Card>
                     </CardActionArea></p>
-                    <p><CardActionArea>
-                        <Card variant="outlined" className="card">
-                            <CardContent>
-                                <Typography variant="h3" align="left">Name</Typography>
-                                <Typography variant="subtitle1" align="left">
-                                    <ul>
-                                        <li>List</li>
-                                        <li>List</li>
-                                    </ul>
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </CardActionArea></p> 
+                    {usersArray.results.map((user, i)=> {
+                        return(
+                            <p id={user.id.value}><CardActionArea>
+                                <Card variant="outlined" className="card" >
+                                    <CardContent>
+                                        <Typography variant="h3" align="left">{user.name.first} {user.name.last}</Typography>
+                                        <Typography variant="subtitle1" align="left">
+                                            <ul>
+                                                <li>Id: {user.id.value}</li>
+                                                <li>List</li>
+                                            </ul>
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                        </CardActionArea></p>
+                    )
+                    })}
+            
                 </div>
                 <span className="col-1"></span>
             </div>
