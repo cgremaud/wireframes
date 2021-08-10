@@ -15,23 +15,23 @@ export function Home() {
     const [usersArrayIsLoaded, setUsersArrayIsLoaded] = useState(false);
 
     const fetchUsersArray = async () => {
-        const result = await fetch("https://randomuser.me/api/?results=5");
+        const result = await fetch("https://randomuser.me/api/?results=10");
         setUsersArray(await result.json());
         console.log(usersArray)
         setUsersArrayIsLoaded(true)
     }
 
+    const fetchUser = async () => {
+        const result = await fetch("https://api.github.com/users/cgremaud");
+        setUser(await result.json());
+        console.log(user);
+        setuserIsLoaded(true);
+    }
+
     useEffect(()=> {  
         try{
-         async function fetchUser() {
-             const result = await fetch("https://api.github.com/users/cgremaud");
-             setUser(await result.json());
-             console.log(user);
-             setuserIsLoaded(true);
-         }
          fetchUser();
          fetchUsersArray();
-         console.log(usersArray.results)
         } catch(err) {
             setError(err);
         }   
@@ -64,20 +64,20 @@ else {
                     </CardActionArea></p>
                     {usersArray.results.map((user, i)=> {
                         return(
-                            <p><CardActionArea>
-                        <Card variant="outlined" className="card" id={i}>
-                            <CardContent>
-                                <Typography variant="h3" align="left">{user.name.first}</Typography>
-                                <Typography variant="subtitle1" align="left">
-                                    <ul>
-                                        <li>List</li>
-                                        <li>List</li>
-                                    </ul>
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </CardActionArea></p>
-                        )
+                            <p id={user.id.value}><CardActionArea>
+                                <Card variant="outlined" className="card" >
+                                    <CardContent>
+                                        <Typography variant="h3" align="left">{user.name.first} {user.name.last}</Typography>
+                                        <Typography variant="subtitle1" align="left">
+                                            <ul>
+                                                <li>Id: {user.id.value}</li>
+                                                <li>List</li>
+                                            </ul>
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                        </CardActionArea></p>
+                    )
                     })}
             
                 </div>
