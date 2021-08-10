@@ -10,7 +10,7 @@ My design goal is to create an easy-to-use app to connect members of a community
 
 This app was created using create-react-app. It also utilizes Material Design components and Bootstrap CDN CSS. 
 
-I am currently working on building the NavBar and Home components. 
+I am currently working on building the NavBar, Profile and Home components. 
 
 You can see our plans for the layout of the app [here](https://docs.google.com/drawings/d/10wdWoqieyv-g_UfqlVWKFR4Jl3XWTR9O6qH7-81oGIA/edit?usp=sharing)
 
