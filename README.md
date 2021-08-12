@@ -1,5 +1,7 @@
 # Description
 
+*This repo is deprecated. See (The main repo)[https://github.com/LaunchCodeLiftoffProjects/gab-group-a/tree/colyns-branch] for the latest version of this code.*
+
 This repo is where I store designs, prototypes and wireframes for frontend components of the Helping Hands app. 
 
 Helping Hands is my capstone project for LaunchCode's Liftoff program. It is a mutual aid app designed to connect people in need with their neighbors who can share. 
